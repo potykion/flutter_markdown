@@ -306,7 +306,8 @@ class MarkdownBuilder implements md.NodeVisitor {
           style: _isInBlockquote
               ? styleSheet.blockquote!.merge(_inlines.last.style)
               : _inlines.last.style,
-          text: _isInBlockquote ? text.text : trimText(text.text),
+          // text: _isInBlockquote ? text.text : trimText(text.text),
+          text: text.text,
           recognizer: _linkHandlers.isNotEmpty ? _linkHandlers.last : null,
         ),
         textAlign: _textAlignForBlockTag(_currentBlockTag),
